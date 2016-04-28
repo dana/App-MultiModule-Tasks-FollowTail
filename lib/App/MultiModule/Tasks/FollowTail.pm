@@ -14,6 +14,24 @@ App::MultiModule::Tasks::FollowTail - File following task for App::MultiModule
 
 =cut
 
+=head1 SYNOPSIS
+
+Quick summary of what the module does.
+
+Perhaps a little code snippet.
+
+    use App::MultiModule::Tasks::FollowTail;
+
+    my $foo = App::MultiModule::Tasks::FollowTail->new();
+    ...
+
+=head1 EXPORT
+
+A list of functions that can be exported.  You can delete this section
+if you don't export anything, such as for a purely object-oriented module.
+
+=head1 SUBROUTINES/METHODS
+
 =head2 message
 
 =cut
@@ -62,7 +80,12 @@ sub _got_log_line {
 sub set_config {
     my $self = shift;
     my $config = shift;
+    my %args = @_;
+    my $root_object = $args{root_object};
     $self->{config} = $config;
+
+    #only the main module will follow any files.
+    return unless $root_object->{module} eq 'main';
     #perhaps premature optimization, but this thing has to be *fast*
     $App::MultiModule::Tasks::FollowTail::config = $config;
 
@@ -148,7 +171,7 @@ L<https://metacpan.org/module/App::MultiModule::Tasks::FollowTail>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2014 Dana M. Diederich.
+Copyright 2014,2016 Dana M. Diederich.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the the Artistic License (2.0). You may obtain a

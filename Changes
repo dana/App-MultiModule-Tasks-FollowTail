@@ -1,4 +1,6 @@
 {{$NEXT}}
+   * Named captures
+   * Bug fix to handle MultiModule running with external processes
 
 1.141220  2014-05-01 20:58:20PDT-0700 America/Los_Angeles
    * Initial release

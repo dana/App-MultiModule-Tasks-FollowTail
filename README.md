@@ -2,6 +2,24 @@
 
 App::MultiModule::Tasks::FollowTail - File following task for App::MultiModule
 
+# SYNOPSIS
+
+Quick summary of what the module does.
+
+Perhaps a little code snippet.
+
+    use App::MultiModule::Tasks::FollowTail;
+
+    my $foo = App::MultiModule::Tasks::FollowTail->new();
+    ...
+
+# EXPORT
+
+A list of functions that can be exported.  You can delete this section
+if you don't export anything, such as for a purely object-oriented module.
+
+# SUBROUTINES/METHODS
+
 ## message
 
 ## set\_config
@@ -43,7 +61,7 @@ You can also look for information at:
 
 # LICENSE AND COPYRIGHT
 
-Copyright 2014 Dana M. Diederich.
+Copyright 2014,2016 Dana M. Diederich.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the the Artistic License (2.0). You may obtain a
